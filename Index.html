@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body class="bg-white overflow-x-hidden">
+
+ 
+  <div class="fixed top-0 right-0 w-12/12 -z-10 translate-y-[-80%]">
+    <img src="./images/header-bg-color.png" alt="" class="w-full">
+  </div>
+  <nav class="w-full fixed top-0 px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50">
+
+    <img src="./images/logo.png" alt="Logo image" class="w-28 cursor-pointer mr-14">
+
+    <ul
+      class="hidden md:flex items-center gap-6 lg:gap-10 rounded-full px-12 py-3 bg-white shadow-sm bg-opacity-70 backdrop-blur">
+      <li><a href="#home" class="hover:text-blue-600 transition">Home</a></li>
+      <li><a href="#about" class="hover:text-blue-600 transition">About</a></li>
+      <li><a href="#experience" class="hover:text-blue-600 transition">Experience</a></li>
+      <li><a href="#project" class="hover:text-blue-600 transition">Projects</a></li>
+      <li><a href="#contact" class="hover:text-blue-600 transition">Contact Me</a></li>
+    </ul>
+
+    <div class="flex items-center gap-4">
+      <button><img src="./images/moon_icon.png" alt="theme" class="w-6 "></button>
+      <a href="#contact"
+        class="hidden lg:flex items-center gap-3 px-8 py-2.5 border border-gray-500 rounded-full ml-4 hover:bg-gray-900 hover:text-white transition ">
+        Contact
+        <img src="./images/arrow-icon.png" alt="" class="w-3">
+      </a>
+
+      <button class="block md:hidden ml-3" onclick="openMenu()">
+        <img src="./images/menu-black.png" alt="" class="w-6 ">
+      </button>
+
+    </div>
+    <!-- Mobile view-->
+          <ul id="sideMenu" class="flex md:hidden flex-col gap-4 py-20 px-10 fixed -right-64 
+      top-0 bottom-0 w-64 z-50 h-screen bg-rose-50 
+      transition-all duration-500 ease-in-out transform will-change-transform">
+        <li class="absolute right-6 top-6" onclick="closeMenu()">
+          <img src="./images/close-black.png" alt="" class="w-5 cursor-pointer">
+        </li>
+
+        <li><a href="#home" onclick="closeMenu()">Home</a></li>
+        <li><a href="#about" onclick="closeMenu()">About</a></li>
+        <li><a href="#experience" onclick="closeMenu()">Experience</a></li>
+        <li><a href="#project" onclick="closeMenu()">Projects</a></li>
+        <li><a href="#contact" onclick="closeMenu()">Contact Me</a></li>
+      </ul>
+ 
+  </nav>
+ <script src="script.js"></script>
+</body>
+
+</html>
