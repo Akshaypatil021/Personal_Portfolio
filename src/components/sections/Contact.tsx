@@ -87,7 +87,7 @@ const Contact = () => {
                     Email
                   </h4>
                   <a 
-                    href="mailto:priyankahotkar4@gmail.com" 
+                    href="mailto:patils.akshaypatil21@gmail.com" 
                     className="text-lg font-medium text-slate-900 dark:text-white hover:text-primary-600 dark:hover:text-primary-400 transition-colors"
                   >
                     patils.akshaypatil21@gmail.com
