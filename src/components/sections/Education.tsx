@@ -22,7 +22,7 @@ const educationData: EducationItem[] = [
     degree: 'MCA in Computer Application',
     duration: '2025–2027',
     details: [
-      'Current CGPA: 8.52',
+      'Current CGPA: 8.3',
       'Hands-on experience with Laravel, MySQL, and backend development through academic projects',
       'Regular practice of DSA and problem-solving',
       'Active participation in hackathons and technical events'
@@ -30,7 +30,7 @@ const educationData: EducationItem[] = [
     icon: <GraduationCap size={24} className="text-primary-500" />,
   },
   {
-    id: 'wit',
+    id: 'scg',
     institution: 'Shivraj College Gadhinglaj, Kolhapur',
     degree: 'BCA in Computer Application',
     duration: '2022–2025',
@@ -42,18 +42,21 @@ const educationData: EducationItem[] = [
     icon: <GraduationCap size={24} className="text-primary-500" />,
   },
   {
-    id: 'wcas',
+    id: 'jcg',
     institution: 'Jagruti College Gadhinglaj , Kolhapur',
     degree: '12th Board (HSC)',
     duration: '2020–2022',
     details: [
       'HSC Percentage: 80.81%',
+      'Analytical & logical thinking',
+      'Basic computer & data handling skills',
+      'Strong problem-solving foundation',
       
     ],
     icon: <School size={24} className="text-primary-500" />,
   },
   {
-    id: 'mes',
+    id: 'mha',
     institution: 'Maharashtra Highschool Atyal ',
     degree: 'SSC (10th Board)',
     duration: '2019–2020',
@@ -67,7 +70,7 @@ const educationData: EducationItem[] = [
 ];
 
 const Education = () => {
-  const [selectedId, setSelectedId] = useState('wit');
+  const [selectedId, setSelectedId] = useState('dyp');
   const { ref, inView } = useInView({
     threshold: 0.2,
     triggerOnce: true,
