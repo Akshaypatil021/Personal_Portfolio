@@ -37,7 +37,7 @@ const Hero = () => {
           {/* Left Side: Content */}
           <div className="flex flex-col items-start text-left">
             <motion.h1 
-              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-widest mb-6 drop-shadow-[0_0_15px_rgba(255,255,255,0.3)] leading-tight"
+              className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-display font-medium text-white tracking-widest mb-6 drop-shadow-[0_0_25px_rgba(255,255,255,0.5)] leading-tight"
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 1 }}
@@ -48,7 +48,7 @@ const Hero = () => {
             </motion.h1>
             
             <motion.p 
-              className="text-slate-400 text-base md:text-lg font-light tracking-wide max-w-lg leading-relaxed mb-8"
+              className="text-slate-300 text-base md:text-lg font-light tracking-wide max-w-lg leading-relaxed mb-8"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 1, delay: 0.3 }}

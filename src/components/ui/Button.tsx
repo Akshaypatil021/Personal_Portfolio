@@ -30,7 +30,7 @@ const Button = ({
   const variantClasses = {
     primary: 'bg-white text-black hover:bg-slate-200 border border-transparent shadow-[0_4px_14px_0_rgba(255,255,255,0.39)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.23)] hover:-translate-y-0.5',
     secondary: 'bg-slate-800 text-white hover:bg-slate-700 border border-white/10 shadow-[0_4px_14px_0_rgba(0,0,0,0.39)] hover:shadow-[0_6px_20px_rgba(255,255,255,0.1)] hover:-translate-y-0.5',
-    outline: 'bg-transparent border border-white/20 text-white hover:bg-white/10 shadow-sm hover:shadow-md hover:-translate-y-0.5',
+    outline: 'bg-transparent border border-white/30 text-white hover:bg-white/20 shadow-sm hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] hover:-translate-y-0.5',
     ghost: 'bg-transparent text-slate-300 hover:text-white hover:bg-white/5 border border-transparent',
   };
   

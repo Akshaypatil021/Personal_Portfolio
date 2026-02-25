@@ -86,7 +86,7 @@ const Navbar = () => {
           <div className="flex items-center space-x-4 md:hidden">
             <button
               onClick={toggleMenu}
-              className="text-slate-700 dark:text-slate-300"
+              className="text-white p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
