@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Base HTML & Body Settings */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* ==========================================
+   DARK THEME (Default when html has .dark)
+   ========================================== */
+html.dark {
+  background-color: #050505;
+  color: #FFFFFF;
+}
+
+html.dark body {
+  background-color: #050505;
+  color: #FFFFFF;
+}
+
+/* Dark Theme Scrollbar */
+html.dark ::-webkit-scrollbar-track {
+  background: #050505;
+}
+
+html.dark ::-webkit-scrollbar-thumb {
+  background: #1F2937;
+  border-radius: 4px;
+}
+
+html.dark ::-webkit-scrollbar-thumb:hover {
+  background: #3B82F6;
+}
+
+/* ==========================================
+   LIGHT THEME (When html does NOT have .dark)
+   ========================================== */
+html:not(.dark) {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+html:not(.dark) body {
+  background-color: #F8FAFC;
+  color: #0F172A;
+}
+
+/* Light Theme Scrollbar */
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #F8FAFC;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+html:not(.dark) ::-webkit-scrollbar-thumb:hover {
+  background: #2563EB;
+}
+
+/* Light Mode Overrides for Hardcoded Utility Classes */
+html:not(.dark) .bg-\[\#050505\] {
+  background-color: #F8FAFC !important;
+}
+
+/* Header Glass Transparency Override */
+html:not(.dark) header {
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(226, 232, 240, 0.8) !important;
+}
+
+html.dark header {
+  background-color: rgba(5, 5, 5, 0.75) !important;
+  backdrop-filter: blur(16px) !important;
+  -webkit-backdrop-filter: blur(16px) !important;
+  border-color: rgba(31, 41, 55, 0.8) !important;
+}
+
+html:not(.dark) .bg-\[\#111827\] {
+  background-color: #FFFFFF !important;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.06), 0 1px 2px -1px rgba(0, 0, 0, 0.06) !important;
+}
+
+html:not(.dark) .border-\[\#1F2937\] {
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .border-\[\#1F2937\]\/80,
+html:not(.dark) .border-\[\#1F2937\]\/50 {
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) .text-white {
+  color: #0F172A !important;
+}
+
+html:not(.dark) .text-\[\#C7CDD8\] {
+  color: #334155 !important;
+}
+
+html:not(.dark) .text-\[\#94A3B8\] {
+  color: #64748B !important;
+}
+
+/* Inset components in Light Mode (badges, tech pills, inner social rows) */
+html:not(.dark) .bg-\[\#111827\] .bg-\[\#050505\],
+html:not(.dark) .bg-\[\#111827\] .bg-\[\#111827\] {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+}
+
+/* Light Mode Blue Accent Enhancements */
+html:not(.dark) .text-\[\#3B82F6\] {
+  color: #2563EB !important;
+}
+
+html:not(.dark) .bg-\[\#3B82F6\] {
+  background-color: #2563EB !important;
+  color: #FFFFFF !important;
+}
+
+html:not(.dark) .bg-\[\#3B82F6\]\/10 {
+  background-color: rgba(37, 99, 235, 0.1) !important;
+}
+
+html:not(.dark) .border-\[\#3B82F6\]\/20 {
+  border-color: rgba(37, 99, 235, 0.2) !important;
+}
+
+/* Keep Button text white on blue primary buttons in light mode */
+html:not(.dark) button.bg-\[\#3B82F6\],
+html:not(.dark) a.bg-\[\#3B82F6\] {
+  color: #FFFFFF !important;
+}
+
+/* ==========================================
+   LIGHT MODE SIDEBAR & CARD HOVER FIXES
+   ========================================== */
+html:not(.dark) aside {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+html:not(.dark) aside .hover\:bg-\[\#1F2937\]:hover {
+  background-color: #EFF6FF !important;
+  color: #2563EB !important;
+}
+
+html:not(.dark) aside .hover\:bg-\[\#1F2937\]:hover svg {
+  color: #2563EB !important;
+}
+
+html:not(.dark) aside .bg-\[\#3B82F6\]\/10 {
+  background-color: #EFF6FF !important;
+  color: #2563EB !important;
+  border-color: rgba(37, 99, 235, 0.3) !important;
+}
+
+/* Card Hover Blue Highlight & Glow in Light Mode */
+html:not(.dark) .hover\:border-\[\#3B82F6\]:hover,
+html:not(.dark) .hover\:border-\[\#3B82F6\]\/60:hover {
+  border-color: #2563EB !important;
+}
+
+html:not(.dark) .group:hover {
+  border-color: #2563EB !important;
+  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.2), 0 8px 10px -6px rgba(37, 99, 235, 0.2) !important;
+}
+
+@layer utilities {
+  .card-border {
+    border: 1px solid #1F2937;
+  }
+}
