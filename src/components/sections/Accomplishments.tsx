@@ -13,7 +13,7 @@ interface Accomplishment {
 const accomplishmentsData: Accomplishment[] = [
   {
     id: 'leetcode',
-    title: '150+ DSA Problems',
+    title: '200+ DSA Problems',
     description: 'Solved over 150 coding challenges on LeetCode, demonstrating strong problem-solving and algorithmic skills. Solving more on Gfg and Codeforces.',
     icon: <Code size={22} className="text-[#3B82F6]" />,
   },
