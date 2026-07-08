@@ -1,4 +1,5 @@
 import { useState, useEffect, createElement, useRef } from "react";
+import { createPortal } from "react-dom";
 import { renderToStaticMarkup } from "react-dom/server";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
@@ -145,7 +146,35 @@ const getProjectModalStyles = (isDark: boolean) => `
   .features-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1rem;
+    gap: 1.25rem;
+  }
+
+  .feature-item {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .feature-item .icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    color: #3b82f6;
+    margin-top: 0.2rem;
+    flex-shrink: 0;
+  }
+
+  .feature-item h5 {
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin: 0 0 0.25rem 0;
+    color: ${isDark ? "#ffffff" : "#1f2937"};
+  }
+
+  .feature-item p {
+    margin: 0;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    color: ${isDark ? "#94A3B8" : "#4b5563"};
   }
 `;
 
@@ -295,6 +324,76 @@ const projectsData: Project[] = [
         </div>
       </div>
     `
+  },
+  {
+    id: "civiclens",
+    title: "CivicLens (CitiZen AI)",
+    description: "An AI-powered smart public complaint & urgency detection system with text NLP classification, PyTorch vision override, active learning loop, and GIS heatmap visualization.",
+    image: "https://images.unsplash.com/photo-1573804633927-bfcbcd909acd?auto=format&fit=crop&q=80&w=800",
+    tech: ["Python", "Flask", "PyTorch", "Scikit-Learn", "SQLite", "Leaflet.js"],
+    github: "https://github.com/Akshaypatil021/CivicLens.git",
+    featured: true,
+    details: `
+      <div class="project-modal">
+        <div class="project-header">
+          <h3 class="project-title">CivicLens (CitiZen AI)</h3>
+          <div class="project-subtitle">AI-Powered Smart Public Complaint & Urgency Detection System</div>
+        </div>
+        
+        <p class="project-description">CivicLens is a smart city platform that automates civic issue triaging by classifying user complaints, prioritizing safety-critical tasks, deduplicating visual reports, and routing them to municipal department workflows using text NLP and PyTorch vision models.</p>
+        
+        <div class="project-section">
+          <h4><i data-lucide="target" class="icon"></i> The Problem Solved</h4>
+          <p>Traditional civic reporting relies on tedious forms, leading to backlog clutter. Critical emergencies (like exposed wires or gas leaks) are handled chronologically alongside minor requests. Duplicate reports for the same issue waste city resources, while vague location descriptions stall dispatch times.</p>
+        </div>
+
+        <div class="project-section">
+          <h4><i data-lucide="star" class="icon"></i> Key Features</h4>
+          <div class="features-grid">
+            <div class="feature-item">
+              <i data-lucide="zap" class="icon"></i>
+              <div>
+                <h5>Dual AI Classifier</h5>
+                <p>Combines a Scikit-Learn TF-IDF text engine and PyTorch MobileNetV3 image classifier for multimodal category & urgency triaging.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="refresh-cw" class="icon"></i>
+              <div>
+                <h5>Self-Improving Loop</h5>
+                <p>Locks corrections from agents and auto-retrains the model in the background after 15 corrections to continuously boost accuracy.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="map" class="icon"></i>
+              <div>
+                <h5>GPS & Duplicate Shield</h5>
+                <p>Reads image EXIF coordinates, falls back to Nominatim API geocoding, and matches MD5 hashes to block duplicate report clutter.</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <i data-lucide="users" class="icon"></i>
+              <div>
+                <h5>Role-Based Portals</h5>
+                <p>Empowers Citizens (reports/tickets/feedback), Workers (proof of work upload), Supervisors, and Admins via dedicated views.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <h4><i data-lucide="settings" class="icon"></i> Technology Stack</h4>
+          <div class="tech-tags">
+            <span>Python (Flask)</span>
+            <span>PyTorch (MobileNetV3)</span>
+            <span>Scikit-Learn</span>
+            <span>SQLite (WAL mode)</span>
+            <span>Leaflet.js</span>
+            <span>HTML5 / CSS3 / Jinja2</span>
+          </div>
+        </div>
+      </div>
+    `
   }
 ];
 
@@ -343,6 +442,17 @@ const Projects = () => {
       }
     };
   }, [theme, openModal]);
+
+  useEffect(() => {
+    if (openModal) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openModal]);
 
   const { ref, inView } = useInView({
     threshold: 0.1,
@@ -456,13 +566,13 @@ const Projects = () => {
         </motion.div>
 
         {/* Modal for detailed project breakdown */}
-        {openModal && (
+        {openModal && createPortal(
           <div
-            className="fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-md p-4"
+            className="fixed inset-0 z-[45] flex items-start justify-center bg-black/80 backdrop-blur-md pt-[85px] px-4 pb-4 md:pl-[250px]"
             onClick={() => setOpenModal(null)}
           >
             <div
-              className="bg-[#111827] border border-[#1F2937] text-white rounded-[16px] shadow-2xl max-w-2xl w-full p-8 relative overflow-y-auto max-h-[90vh]"
+              className="bg-[#111827] border border-[#1F2937] text-white rounded-[16px] shadow-2xl max-w-2xl w-full p-8 relative overflow-y-auto max-h-[calc(100vh-105px)]"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -502,7 +612,8 @@ const Projects = () => {
                 );
               })()}
             </div>
-          </div>
+          </div>,
+          document.body
         )}
 
         {/* View All GitHub Link */}
