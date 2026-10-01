@@ -23,7 +23,7 @@ const navItems = [
   { id: 'experience', label: 'Experience', icon: Briefcase },
   { id: 'skills', label: 'Skills & Tools', icon: Cpu },
   { id: 'projects', label: 'Projects', icon: Code },
-  { id: 'resume-link', label: 'Resume', icon: FileText, isExternal: true, href: `${import.meta.env.BASE_URL}Akshay_Patil_MCA.pdf` },
+  { id: 'resume-link', label: 'Resume', icon: FileText, isExternal: true, href: `${import.meta.env.BASE_URL}Akshay_PatilFullStack_Resume.docx` },
   { id: 'accomplishments', label: 'Stats', icon: BarChart2 },
   { id: 'contact', label: 'Contact Me', icon: Mail },
   

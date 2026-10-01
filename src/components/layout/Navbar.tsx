@@ -117,7 +117,7 @@ const Navbar = () => {
             
             <div className="pt-6 mt-auto">
               <a 
-                href={`${import.meta.env.BASE_URL}FinalResume2.pdf`} 
+                href={`${import.meta.env.BASE_URL}Akshay_PatilFullStack_Resume.docx`} 
                 className="flex items-center justify-center w-full px-4 py-4 rounded-full bg-white text-black hover:bg-slate-200 transition-colors text-sm font-bold tracking-widest uppercase"
                 target="_blank"
                 rel="noopener noreferrer"

@@ -83,7 +83,7 @@ const TopHeader = ({ onToggleSidebar, isSidebarOpen }: TopHeaderProps) => {
             <span>LeetCode</span>
           </a>
           <a 
-            href={`${import.meta.env.BASE_URL}Akshay_Patil_MCA.pdf`} 
+            href={`${import.meta.env.BASE_URL}Akshay_PatilFullStack_Resume.docx`} 
             target="_blank" 
             rel="noopener noreferrer" 
             className="flex items-center gap-2 hover:text-[#3B82F6] transition-colors bg-slate-100/80 dark:bg-[#111827]/80 backdrop-blur-md px-3.5 py-1.5 rounded-[10px] border border-slate-200 dark:border-[#1F2937]"

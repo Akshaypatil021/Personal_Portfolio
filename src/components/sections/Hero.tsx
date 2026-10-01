@@ -73,7 +73,7 @@ const Hero = () => {
           <Button 
             variant="secondary" 
             size="lg"
-            href={`${import.meta.env.BASE_URL}Akshay_Patil_MCA.pdf`}
+            href={`${import.meta.env.BASE_URL}Akshay_PatilFullStack_Resume.docx`}
             target="_blank"
             rel="noopener noreferrer"
             icon={<FileText size={19} />}

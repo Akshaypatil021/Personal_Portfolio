@@ -29,7 +29,7 @@ const About = () => {
         >
           <div className="space-y-6 text-[#C7CDD8] text-lg sm:text-[21px] leading-[1.85] font-normal">
             <p>
-              I am a <strong className="text-slate-900 dark:text-white font-semibold">Backend Developer</strong> passionate about building secure and scalable web applications. My expertise includes PHP, Laravel, Python, MySQL, and Core Java, with hands-on experience in backend development using MVC architecture and RESTful APIs.
+              I am a <strong className="text-slate-900 dark:text-white font-semibold">Full Stack Developer</strong> passionate about building secure and scalable web applications. My expertise includes PHP, Laravel, Python, MySQL, Java, React.js, Node.js, express.js, HTML, CSS, with hands-on experience in backend development using MVC architecture and RESTful APIs.
             </p>
 
             <p>
@@ -42,7 +42,7 @@ const About = () => {
             <Button
               variant="primary"
               size="lg"
-              href={`${import.meta.env.BASE_URL}Akshay_Patil_MCA.pdf`}
+              href={`${import.meta.env.BASE_URL}Akshay_PatilFullStack_Resume.docx`}
               target="_blank"
               rel="noopener noreferrer"
               icon={<FileText size={19} />}
